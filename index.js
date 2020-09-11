@@ -31,7 +31,7 @@ var game = new Phaser.Game(config);
     }
 
     var platforms;
-    var player;
+    var player1 , player2;
 
     function create ()
     {
@@ -39,11 +39,11 @@ var game = new Phaser.Game(config);
         platforms = this.physics.add.staticGroup();
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
     
-        player = this.physics.add.image(100,450,'yoda');
-        player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
-        player.body.setGravityY(300);
-        this.physics.add.collider(player, platforms);
+        player1 = this.physics.add.image(100,450,'yoda');
+        player1.setBounce(0.2);
+        player1.setCollideWorldBounds(true);
+        player1.body.setGravityY(300);
+        this.physics.add.collider(player1, platforms);
     }    
     var cursors; 
 
@@ -53,23 +53,23 @@ var game = new Phaser.Game(config);
 
         if (cursors.left.isDown)
         {
-            player.setVelocityX(-160);
+            player1.setVelocityX(-160);
     
         }
         else if (cursors.right.isDown)
         {
-            player.setVelocityX(160);
+            player1.setVelocityX(160);
         
         }
         else
         {
-            player.setVelocityX(0);
+            player1.setVelocityX(0);
         
         }
         
         if (cursors.up.isDown && player.body.touching.down)
         {
-            player.setVelocityY(-330);
+            player1.setVelocityY(-330);
         }
 
         
