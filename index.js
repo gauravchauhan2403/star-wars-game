@@ -24,26 +24,35 @@ var game = new Phaser.Game(config);
         this.load.image('sky', 'assets/skies.jpg');
         this.load.image('ground', 'assets/ground.png');
         this.load.image('yoda', 'assets/yoda.svg');
-        // this.load.spritesheet('dude', 
-        //     'assets/dude.png',
-        //     { frameWidth: 32, frameHeight: 48 }
-        // );
+        this.load.image('darth', 'assets/darth-vader.svg');
     }
 
     var platforms;
     var player1 , player2;
+    var score = 0;
+    var scoreText;
 
     function create ()
     {
         this.add.image(400, 300, 'sky');
         platforms = this.physics.add.staticGroup();
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
-    
-        player1 = this.physics.add.image(100,450,'yoda');
+
+        player1 = this.physics.add.image(20,450,'yoda').setScale(.3).refreshBody();
         player1.setBounce(0.2);
         player1.setCollideWorldBounds(true);
         player1.body.setGravityY(300);
         this.physics.add.collider(player1, platforms);
+        this.physics.add.collider(player1,player2);
+        
+        player2 = this.physics.add.image(790,450,'darth').setScale(.3).refreshBody();
+        player2.setBounce(0.2);
+        player2.setCollideWorldBounds(true);
+        player2.body.setGravityY(300);
+        this.physics.add.collider(player2, platforms);
+        this.physics.add.collider(player1,player2);
+
+        scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#666666' });
     }    
     var cursors; 
 
@@ -67,7 +76,7 @@ var game = new Phaser.Game(config);
         
         }
         
-        if (cursors.up.isDown && player.body.touching.down)
+        if (cursors.up.isDown && player1.body.touching.down)
         {
             player1.setVelocityY(-330);
         }
