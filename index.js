@@ -43,7 +43,7 @@ var game = new Phaser.Game(config);
         player1.setCollideWorldBounds(true);
         player1.body.setGravityY(300);
         this.physics.add.collider(player1, platforms);
-        this.physics.add.collider(player,player);
+        this.physics.add.collider(player1,player2);
         
         player2 = this.physics.add.image(790,450,'darth').setScale(.3).refreshBody();
         player2.setBounce(0.2);
