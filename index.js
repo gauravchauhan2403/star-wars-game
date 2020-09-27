@@ -49,8 +49,8 @@ var game = new Phaser.Game(config);
         player2.setBounce(0.2);
         player2.setCollideWorldBounds(true);
         player2.body.setGravityY(300);
-        this.physics.add.collider(player2, platforms);
-        this.physics.add.collider(player1,player2);
+        this.physics.add.collider(player, platforms);
+        this.physics.add.collider(player,player2);
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#666666' });
     }    
