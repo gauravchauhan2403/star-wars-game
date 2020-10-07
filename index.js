@@ -39,8 +39,8 @@ var game = new Phaser.Game(config);
         platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
         player1 = this.physics.add.image(20,450,'yoda').setScale(.3).refreshBody();
-        player2.setBounce(0.2);
-        player2.setCollideWorldBounds(true);
+        player1.setBounce(0.2);
+        player1.setCollideWorldBounds(true);
         player1.body.setGravityY(300);
         this.physics.add.collider(player1, platforms);
         this.physics.add.collider(player1,player2);
