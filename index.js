@@ -28,7 +28,7 @@ var game = new Phaser.Game(config);
     }
 
     var platforms;
-    var player1 , player2;
+    var player , player;
     var score = 0;
     var scoreText;
 
