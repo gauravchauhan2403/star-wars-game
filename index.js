@@ -54,7 +54,7 @@ var game = new Phaser.Game(config);
 
         scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#666666' });
     }    
-    var cursers; 
+    var cursors; 
 
     function update ()
     {
