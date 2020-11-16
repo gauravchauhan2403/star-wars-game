@@ -67,7 +67,7 @@ var game = new Phaser.Game(config);
         }
         else if (cursors.right.isDown)
         {
-            player1.setVelocityX(160);
+            player1.setVelocityY(160);
         
         }
         else
