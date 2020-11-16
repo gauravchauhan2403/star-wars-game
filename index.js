@@ -78,7 +78,7 @@ var game = new Phaser.Game(config);
         
         if (cursors.up.isDown && player1.body.touching.down)
         {
-            player1.setVelocityY(-330);
+            player1.setVelocityZ(-330);
         }
 
         
