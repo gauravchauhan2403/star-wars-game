@@ -30,7 +30,7 @@ var game = new Phaser.Game(config);
     var platforms;
     var player1 , player2;
     var score = 0;
-    var scoreText;
+    var scoreText1;
 
     function create ()
     {
